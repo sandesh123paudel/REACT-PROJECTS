@@ -2,4 +2,4 @@
 
 ## Simple Brand UI
 
-![Brand UI Preview](./Screenshots/project1.png)
+![Brand UI Preview](./Screenshots/project.png)

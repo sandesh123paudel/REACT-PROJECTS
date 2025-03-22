@@ -45,14 +45,3 @@ nav {
   color: #43a75f;
 }
 
-
-.nav ul li {
-  font-weight: 600;
-  font-size: 18px;
-  cursor: pointer;
-  transition: all 0.3s linear;
-}
-
-.nav ul li:hover {
-  color: #43a75f;
-}

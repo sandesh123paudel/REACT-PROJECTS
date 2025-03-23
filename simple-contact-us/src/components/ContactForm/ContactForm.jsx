@@ -24,10 +24,22 @@ const ContactForm = () => {
           icon={<MdEmail fontSize={"24px"} />}
         />
 
-
-        <form action="">
-          <input type="text" name="" id="" />
-
+        <form>
+          <div className={styles.form_control}>
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" id="" />
+          </div>
+          <div className={styles.form_control}>
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" id="" />
+          </div>
+          <div className={styles.form_control}>
+            <label htmlFor="text">TEXT</label>
+            <textarea type="text" name="text" id="" rows="8" />
+          </div>
+          <div style={{ display: "flex", justifyContent: "end" }}>
+            <Button isOutline={false} text={"SUBMITT"} />
+          </div>
         </form>
       </div>
       <div className={styles.contact_image}>

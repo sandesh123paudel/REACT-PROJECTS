@@ -21,8 +21,9 @@
 
 .navigation ul li {
   color: black;
+  transition: all 0.3s linear;
 }
 
-.navigation ul:hover {
+.navigation ul li:hover {
   color: red;
 }

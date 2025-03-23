@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./ContactForm.module.css";
 import Button from "../Button/Button";
 import { MdMessage } from "react-icons/md";
 import { IoMdCall } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 
-const ContactForm = () => {
+const ContactForm = ({ onSubmit }) => {
+  const nameElement = useRef();
+  const emailElement = useRef();
+  const textElement = useRef();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const name = nameElement.current.value;
+    const email = emailElement.current.value;
+    const text = textElement.current.value;
+
+    if (!name || !email || !text) {
+      alert("Please enter all form datas.");
+      return;
+    }
+
+    onSubmit(name, email, text);
+
+    nameElement.current.value = "";
+    emailElement.current.value = "";
+    textElement.current.value = "";
+  };
+
   return (
     <section className={styles.container}>
       <div className={styles.contact_form}>
@@ -24,18 +47,24 @@ const ContactForm = () => {
           icon={<MdEmail fontSize={"24px"} />}
         />
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className={styles.form_control}>
             <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="" />
+            <input ref={nameElement} type="text" name="name" id="" />
           </div>
           <div className={styles.form_control}>
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="" />
+            <input ref={emailElement} type="email" name="email" id="" />
           </div>
           <div className={styles.form_control}>
             <label htmlFor="text">TEXT</label>
-            <textarea type="text" name="text" id="" rows="8" />
+            <textarea
+              ref={textElement}
+              type="text"
+              name="text"
+              id=""
+              rows="8"
+            />
           </div>
           <div style={{ display: "flex", justifyContent: "end" }}>
             <Button isOutline={false} text={"SUBMITT"} />

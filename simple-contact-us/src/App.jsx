@@ -1,11 +1,14 @@
 import "./App.css";
-import Header from "./components/Header/Header";
+import ContactHeader from "./components/ContactHeader/ContactHeader";
+import Navigation from "./components/Navigation/Navigation";
 
 function App() {
   return (
-    <>
-      <Header />
-    </>
+    <div>
+      <Navigation />
+
+      <ContactHeader />
+    </div>
   );
 }
 

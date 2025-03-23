@@ -1,0 +1,28 @@
+.navigation {
+  padding: 0 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+
+
+}
+
+.navigation ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  font-weight: 500;
+  cursor: pointer;
+
+}
+
+
+
+.navigation ul li {
+  color: black;
+}
+
+.navigation ul:hover {
+  color: red;
+}

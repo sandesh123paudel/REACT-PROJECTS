@@ -2,3 +2,9 @@
   font-size: 48px;
   font-weight: 800;
 }
+
+.contact_section p {
+  color: gray;
+  font-size: 16px;
+  font-weight: 500;
+}

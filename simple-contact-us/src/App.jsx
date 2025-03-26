@@ -16,6 +16,9 @@ function App() {
       text,
     });
   };
+
+
+  
   return (
     <div>
       <Navigation />

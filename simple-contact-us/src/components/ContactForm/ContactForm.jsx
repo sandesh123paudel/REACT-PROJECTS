@@ -70,9 +70,6 @@ const ContactForm = ({ onSubmit }) => {
             <Button isOutline={false} text={"SUBMITT"} />
           </div>
         </form>
-
-        <label htmlFor="name">Name</label>
-        <input ref={nameElement} type="text" name="name" id="" />
       </div>
       <div className={styles.contact_image}>
         <img src="images/service.svg" alt="Service" />

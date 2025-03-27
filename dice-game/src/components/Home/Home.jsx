@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Home.module.css";
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -11,7 +12,9 @@ const Home = () => {
         </div>
         <div className={styles.content}>
           <h1>DICE GAME</h1>
-          <Button title={"Play Now"} />
+          <Link to={"/game"}>
+            <Button title={"Play Now"} />
+          </Link>
         </div>
       </div>
     </div>

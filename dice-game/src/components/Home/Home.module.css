@@ -26,3 +26,67 @@
   font-weight: 800;
 
 }
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Ensure image scales properly */
+.image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Content layout */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  text-align: right;
+}
+
+.content h1 {
+  font-size: 96px;
+  font-weight: 800;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 1024px) {
+  .content h1 {
+    font-size: 72px;
+    /* Reduce font size for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    /* Stack content vertically */
+    text-align: center;
+  }
+
+  .content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .content h1 {
+    font-size: 48px;
+    /* Smaller font for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 36px;
+    /* Smaller font for small mobile screens */
+  }
+}

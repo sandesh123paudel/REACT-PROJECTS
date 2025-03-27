@@ -1,0 +1,65 @@
+.upper {
+  display: flex;
+  justify-content: space-between;
+  /* margin: 5px 30px; */
+  padding: 50px;
+
+
+}
+
+
+.score {
+  line-height: 0.9;
+
+}
+
+.score h2 {
+  font-size: 100px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.score p {
+  font-size: 24px;
+}
+
+.dice_number {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.number_button {
+  height: 72px;
+  width: 72px;
+
+
+}
+
+.dice_number p {
+  text-align: end;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+
+.lower {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.lower p {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 36px;
+}

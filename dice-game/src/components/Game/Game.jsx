@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./Game.module.css";
 import Button from "../Button/Button";
 import styled from "styled-components";
+import RollDice from "./RollDice";
 
 const Game = () => {
   const arrNum = [1, 2, 3, 4, 5, 6];
@@ -20,7 +21,11 @@ const Game = () => {
         <div className={styles.dice_number}>
           <div className={styles.buttons}>
             {arrNum.map((num, i) => (
-              <Box key={i} onClick={() => setSelectedNumber(num)}>
+              <Box
+                isSelected={num === selectedNumber}
+                key={i}
+                onClick={() => setSelectedNumber(num)}
+              >
                 {num}
               </Box>
             ))}
@@ -30,9 +35,7 @@ const Game = () => {
       </div>
 
       <div className={styles.lower}>
-        <img src="images/dice_1.png" alt="Dice 1" srcset="" />
-
-        <p>Click on Dice to Roll</p>
+        <RollDice />
 
         <Button title={"Reset Score"} onClick={""} />
         <Button title={"Show Rules"} onClick={""} />
@@ -51,4 +54,7 @@ const Box = styled.div`
   place-items: center;
   font-size: 24px;
   font-weight: bold;
+  color: ${(props) => (props.isSelected ? "white" : "black")};
+  background-color: ${(props) => (props.isSelected ? "black" : "white")};
+  cursor: pointer;
 `;

@@ -5,6 +5,7 @@
   padding: 50px;
 
 
+
 }
 
 
@@ -35,16 +36,7 @@
   gap: 24px;
 }
 
-.active {
-  height: 72px;
-  width: 72px;
-  background-color: black;
-  color: white;
-  border: none;
-  font-size: 24px;
-  font-weight: bold;
 
-}
 
 .dice_number p {
   text-align: end;

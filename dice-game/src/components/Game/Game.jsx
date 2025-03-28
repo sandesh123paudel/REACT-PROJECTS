@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Game.module.css";
 import Button from "../Button/Button";
-import NumberButton from "../Number_Button/NumberButton";
+import styled from "styled-components";
 
 const Game = () => {
+  const arrNum = [1, 2, 3, 4, 5, 6];
+
+  const [selectedNumber, setSelectedNumber] = useState();
+
+  console.log(selectedNumber);
+
   return (
     <>
       <div className={styles.upper}>
@@ -13,13 +19,11 @@ const Game = () => {
         </div>
         <div className={styles.dice_number}>
           <div className={styles.buttons}>
-            <NumberButton number={"1"} />
-            <NumberButton number={"2"} />
-            <NumberButton number={"3"} />
-            <button className={styles.active}>4</button>
-            {/* <NumberButton number={"4"} /> */}
-            <NumberButton number={"5"} />
-            <NumberButton number={"6"} />
+            {arrNum.map((num, i) => (
+              <Box key={i} onClick={() => setSelectedNumber(num)}>
+                {num}
+              </Box>
+            ))}
           </div>
           <p>Select Number</p>
         </div>
@@ -30,11 +34,21 @@ const Game = () => {
 
         <p>Click on Dice to Roll</p>
 
-        <Button title={"Reset Score"} />
-        <Button title={"Show Rules"} />
+        <Button title={"Reset Score"} onClick={""} />
+        <Button title={"Show Rules"} onClick={""} />
       </div>
     </>
   );
 };
 
 export default Game;
+
+const Box = styled.div`
+  height: 72px;
+  width: 72px;
+  border: 1px solid black;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  font-weight: bold;
+`;

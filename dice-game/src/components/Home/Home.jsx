@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "./Home.module.css";
 import Button from "../Button/Button";
-import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ toggle }) => {
   return (
     <div>
       <div className={styles.container}>
@@ -12,9 +11,8 @@ const Home = () => {
         </div>
         <div className={styles.content}>
           <h1>DICE GAME</h1>
-          <Link to={"/game"}>
-            <Button title={"Play Now"} />
-          </Link>
+
+          <Button title={"Play Now"} onClick={toggle} />
         </div>
       </div>
     </div>

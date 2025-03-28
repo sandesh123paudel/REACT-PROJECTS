@@ -11,11 +11,15 @@
   cursor: pointer;
   margin-bottom: 24px;
   transition: all 0.3s linear;
+  align-items: center;
+  border: 1px solid transparent;
+
 
 }
 
 .button:hover {
-  background-color: rgba(36, 35, 35, 0.853);
-
+  background-color: rgba(255, 255, 255, 0.853);
+  color: black;
+  border: 1px solid black;
 
 }

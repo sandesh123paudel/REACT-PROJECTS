@@ -35,10 +35,14 @@
   gap: 24px;
 }
 
-.number_button {
+.active {
   height: 72px;
   width: 72px;
-
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
 
 }
 
@@ -57,6 +61,7 @@
 
 
 }
+
 
 .lower p {
   font-size: 24px;

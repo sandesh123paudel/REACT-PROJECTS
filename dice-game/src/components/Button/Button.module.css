@@ -10,5 +10,12 @@
   font-family: "Poppins";
   cursor: pointer;
   margin-bottom: 24px;
+  transition: all 0.3s linear;
+
+}
+
+.button:hover {
+  background-color: rgba(36, 35, 35, 0.853);
+
 
 }

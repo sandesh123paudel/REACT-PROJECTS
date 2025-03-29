@@ -47,12 +47,15 @@
 
 
 .lower {
+  margin-top: 48px;
   align-items: center;
   display: flex;
   flex-direction: column;
 
 
 }
+
+
 
 
 .lower p {

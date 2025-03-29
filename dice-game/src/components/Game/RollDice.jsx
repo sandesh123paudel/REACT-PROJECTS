@@ -16,4 +16,8 @@ export default RollDice;
 
 const DiceContainer = styled.div`
   cursor: pointer;
+
+  p {
+    margin-bottom: 20px;
+  }
 `;

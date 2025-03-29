@@ -3,6 +3,7 @@ import styles from "./Game.module.css";
 import Button from "../Button/Button";
 import styled from "styled-components";
 import RollDice from "./RollDice";
+import Rules from "./Rules";
 
 const Game = () => {
   const arrNum = [1, 2, 3, 4, 5, 6];
@@ -12,8 +13,7 @@ const Game = () => {
   const [currentDice, setCurrentDice] = useState(1);
   const [error, setError] = useState("");
   const [match, setMatch] = useState("");
-
-
+  const [showRules, setShowRules] = useState(false);
 
   const generateRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
@@ -47,10 +47,6 @@ const Game = () => {
     setScore(0);
   };
 
-
-  const showRules=()=>{
-    
-  }
   return (
     <>
       <div className={styles.upper}>
@@ -80,8 +76,13 @@ const Game = () => {
         <RollDice currentDice={currentDice} rollDice={rollDice} />
 
         <Button title={"Reset Score"} onClick={resetScore} />
-        <Button title={"Show Rules"} onClick={""} />
+        <Button
+          title={`${showRules ? "Hide" : "Show"} Rules`}
+          onClick={() => setShowRules((prev) => !prev)}
+        />
       </div>
+
+      {showRules && <Rules />}
     </>
   );
 };

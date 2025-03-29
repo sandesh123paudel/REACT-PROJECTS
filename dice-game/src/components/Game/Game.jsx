@@ -7,24 +7,66 @@ import RollDice from "./RollDice";
 const Game = () => {
   const arrNum = [1, 2, 3, 4, 5, 6];
 
+  const [score, setScore] = useState(0);
   const [selectedNumber, setSelectedNumber] = useState();
+  const [currentDice, setCurrentDice] = useState(1);
+  const [error, setError] = useState("");
+  const [match, setMatch] = useState("");
 
-  console.log(selectedNumber);
 
+
+  const generateRandomNumber = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+  };
+
+  const rollDice = () => {
+    if (!selectedNumber) {
+      setMatch("");
+      setError("Plese select a number");
+      return;
+    }
+
+    const randomNumber = generateRandomNumber(1, 7);
+    setCurrentDice((prev) => randomNumber);
+
+    if (selectedNumber === randomNumber) {
+      setMatch(" Wow !! You got a match !!");
+      setScore((prev) => prev + 1);
+    }
+
+    setSelectedNumber(undefined);
+  };
+
+  const numberSelectorHandler = (num) => {
+    setSelectedNumber(num);
+    setMatch("");
+    setError("");
+  };
+
+  const resetScore = () => {
+    setScore(0);
+  };
+
+
+  const showRules=()=>{
+    
+  }
   return (
     <>
       <div className={styles.upper}>
         <div className={styles.score}>
-          <h2>0</h2>
+          <h2>{score}</h2>
           <p>Total Score</p>
         </div>
         <div className={styles.dice_number}>
+          <div className={styles.errorMessage}>{error}</div>
+          <div className={styles.matchMessage}>{match}</div>
           <div className={styles.buttons}>
             {arrNum.map((num, i) => (
               <Box
                 isSelected={num === selectedNumber}
                 key={i}
-                onClick={() => setSelectedNumber(num)}
+                onClick={() => numberSelectorHandler(num)}
               >
                 {num}
               </Box>
@@ -35,9 +77,9 @@ const Game = () => {
       </div>
 
       <div className={styles.lower}>
-        <RollDice />
+        <RollDice currentDice={currentDice} rollDice={rollDice} />
 
-        <Button title={"Reset Score"} onClick={""} />
+        <Button title={"Reset Score"} onClick={resetScore} />
         <Button title={"Show Rules"} onClick={""} />
       </div>
     </>

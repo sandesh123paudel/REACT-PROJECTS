@@ -27,10 +27,28 @@
 .dice_number {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+
+  align-items: end;
+}
+
+.errorMessage {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: red;
+  font-weight: 400;
+
+}
+
+.matchMessage {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: rgb(8, 173, 77);
+  font-weight: 400;
+
 }
 
 .buttons {
+  margin-bottom: 30px;
   display: flex;
   flex-direction: row;
   gap: 24px;

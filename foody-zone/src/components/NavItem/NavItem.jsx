@@ -13,7 +13,7 @@ export default NavItem;
 
 const NavContainer = styled.div`
   padding: 6px 12px;
-  background-color: #FF4343;
+  background-color: #ff4343;
   color: white;
   border-radius: 5px;
 `;

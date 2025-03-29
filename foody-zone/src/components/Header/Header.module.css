@@ -3,13 +3,12 @@
   background-color: rgba(10, 10, 10, 0.88);
 }
 
+@media screen {}
+
 .upper {
   display: flex;
   justify-content: space-between;
   padding: 54px;
-
-
-
 
 }
 
@@ -25,6 +24,7 @@ input {
   height: 40px;
   background-color: transparent;
   color: white;
+
 
 
 }

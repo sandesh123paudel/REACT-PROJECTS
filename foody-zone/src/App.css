@@ -3,3 +3,9 @@
   padding: 0 auto;
   box-sizing: border-box;
 }
+
+.container {
+  height: 100vh;
+  max-width: 100vw;
+
+}

@@ -1,0 +1,39 @@
+.header {
+  min-height: 150px;
+  background-color: rgba(10, 10, 10, 0.88);
+}
+
+.upper {
+  display: flex;
+  justify-content: space-between;
+  padding: 54px;
+
+
+
+
+}
+
+.logo {
+  color: #FF4343;
+}
+
+input {
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 1px solid #FF4343;
+  width: 285px;
+  height: 40px;
+  background-color: transparent;
+  color: white;
+
+
+}
+
+.lower {
+  display: flex;
+  padding: 10px 0;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+
+}

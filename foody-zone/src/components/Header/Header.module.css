@@ -1,9 +1,43 @@
 .header {
-  min-height: 150px;
+
+  min-height: 200px;
   background-color: rgba(10, 10, 10, 0.88);
+
 }
 
-@media screen {}
+@media screen and (max-width: 768px) {
+  .header {
+
+    min-height: 250px;
+    background-color: rgba(10, 10, 10, 0.88);
+
+  }
+
+  .upper {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+
+  }
+
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  .lower {
+    margin-top: -50px;
+    flex-wrap: wrap;
+    gap: 10px;
+
+  }
+
+  input {
+    width: 90%;
+    /* Full width on small screens */
+    max-width: 300px;
+  }
+}
+
 
 .upper {
   display: flex;
@@ -34,6 +68,6 @@ input {
   padding: 10px 0;
   gap: 14px;
   justify-content: center;
-  align-items: center;
+
 
 }

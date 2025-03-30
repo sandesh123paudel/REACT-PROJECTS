@@ -10,6 +10,12 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
 }
 
+body{
+  background-color: #323334;
+  color: white;
+  min-height: 100vh;
+}
+
 
 `;
 

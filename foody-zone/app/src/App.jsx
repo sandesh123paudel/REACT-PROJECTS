@@ -24,7 +24,7 @@ const App = () => {
 export default App;
 
 const MainContainer = styled.div`
-  background-color: black;
+  background-color: #323334;
   color: red;
 `;
 

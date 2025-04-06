@@ -16,6 +16,12 @@
 
 ![Contact Us Preview](./Screenshots/contact2.png)
 
-
-
 ### Project 3
+
+## Dice Game
+
+![Landing Page Preview](./Screenshots/dice1.png)
+
+![Game Page 1 Preview](./Screenshots/dice2.png)
+
+![Game Page 2 Preview](./Screenshots/dice%203.png)

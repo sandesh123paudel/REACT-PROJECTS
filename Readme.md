@@ -20,8 +20,11 @@
 
 ## Dice Game
 
+### SS1
 ![Landing Page Preview](./Screenshots/dice1.png)
 
+### SS2
 ![Game Page 1 Preview](./Screenshots/dice2.png)
 
+### SS3
 ![Game Page 2 Preview](./Screenshots/dice%203.png)

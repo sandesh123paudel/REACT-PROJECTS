@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import SearchResult from "./components/SearchResult/SearchResult";
 
-const BASE_URL = "http://localhost:9000/";
+export const BASE_URL = "http://localhost:9000";
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -54,9 +55,7 @@ const App = () => {
         <Button>Dinner</Button>
       </FilterContainer>
 
-      <FoodCardContainer>
-        <FoodCards></FoodCards>
-      </FoodCardContainer>
+      <SearchResult data={data} />
     </Container>
   );
 };
@@ -96,7 +95,7 @@ const FilterContainer = styled.section`
   padding-bottom: 40px;
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   background: #ff4343;
   border-radius: 5px;
   padding: 6px 12px;
@@ -104,10 +103,4 @@ const Button = styled.button`
   color: white;
 `;
 
-const FoodCardContainer = styled.section`
-  height: calc(100vh - 210px);
-  background-image: url("bg.png");
-  background-size: cover;
-`;
 
-const FoodCards = styled.div``;

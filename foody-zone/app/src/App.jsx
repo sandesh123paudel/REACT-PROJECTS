@@ -32,37 +32,38 @@ const App = () => {
   }
 
   return (
-    <Container>
-      <TopContainer>
-        <div className="logo">
-          <img src="/Foody Zone.svg" alt="Logo" />
-        </div>
+    <>
+      <Container>
+        <TopContainer>
+          <div className="logo">
+            <img src="/Foody Zone.svg" alt="Logo" />
+          </div>
 
-        <div className="search">
-          <input
-            type="text"
-            name=""
-            id=""
-            placeholder="Search Food Items....."
-          />
-        </div>
-      </TopContainer>
+          <div className="search">
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Search Food Items....."
+            />
+          </div>
+        </TopContainer>
 
-      <FilterContainer>
-        <Button>All</Button>
-        <Button>Breakfast</Button>
-        <Button>Lunch</Button>
-        <Button>Dinner</Button>
-      </FilterContainer>
-
+        <FilterContainer>
+          <Button>All</Button>
+          <Button>Breakfast</Button>
+          <Button>Lunch</Button>
+          <Button>Dinner</Button>
+        </FilterContainer>
+      </Container>
       <SearchResult data={data} />
-    </Container>
+    </>
   );
 };
 
 export default App;
 
-const Container = styled.div`
+export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   color: red;
@@ -102,5 +103,3 @@ export const Button = styled.button`
   border: none;
   color: white;
 `;
-
-

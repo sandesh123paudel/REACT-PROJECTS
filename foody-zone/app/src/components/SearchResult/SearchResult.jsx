@@ -1,27 +1,29 @@
 import React from "react";
 import styled from "styled-components";
-import { BASE_URL, Button } from "../../App";
+import { BASE_URL, Button, Container } from "../../App";
 
 const SearchResult = ({ data: foods }) => {
   return (
     <FoodCardContainer>
-      <FoodCards>
-        {foods?.map((food) => (
-          <FoodCard key={food.name}>
-            <div className="food_image">
-              <img src={BASE_URL + food.image} alt="" />
-            </div>
-            <div className="food_info">
-              <div className="info">
-                <h3>{food.name}</h3>
-                <p>{food.text}</p>
+      <Container>
+        <FoodCards>
+          {foods?.map((food) => (
+            <FoodCard key={food.name}>
+              <div className="food_image">
+                <img src={BASE_URL + food.image} alt="" />
               </div>
+              <div className="food_info">
+                <div className="info">
+                  <h3>{food.name}</h3>
+                  <p>{food.text}</p>
+                </div>
 
-              <Button> $ {food.price.toFixed(2)}</Button>
-            </div>
-          </FoodCard>
-        ))}
-      </FoodCards>
+                <Button> $ {food.price.toFixed(2)}</Button>
+              </div>
+            </FoodCard>
+          ))}
+        </FoodCards>
+      </Container>
     </FoodCardContainer>
   );
 };

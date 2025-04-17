@@ -9,6 +9,7 @@ const App = () => {
   const [filterData, setFilterData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [selectedBtn, setSelectedBtn] = useState("all");
 
   useEffect(() => {
     const fetchFoodData = async () => {
@@ -39,6 +40,40 @@ const App = () => {
     setFilterData(filter);
   };
 
+  const filterFood = (type) => {
+    if (type === "all") {
+      setFilterData(data);
+      setSelectedBtn("all");
+      return;
+    }
+
+    const filter = data?.filter((food) =>
+      food.type.toLowerCase().includes(type.toLowerCase())
+    );
+
+    setFilterData(filter);
+    setSelectedBtn(type);
+  };
+
+  const filterBtn = [
+    {
+      name: "All",
+      type: "all",
+    },
+    {
+      name: "Breakfast",
+      type: "breakfast",
+    },
+    {
+      name: "Lunch",
+      type: "lunch",
+    },
+    {
+      name: "Dinner",
+      type: "dinner",
+    },
+  ];
+
   if (error) {
     <div>{error}</div>;
   }
@@ -66,10 +101,15 @@ const App = () => {
         </TopContainer>
 
         <FilterContainer>
-          <Button>All</Button>
-          <Button>Breakfast</Button>
-          <Button>Lunch</Button>
-          <Button>Dinner</Button>
+          {filterBtn.map((value) => (
+            <Button key={value.name} onClick={() => filterFood(value.type)}>
+              {value.name}
+            </Button>
+          ))}
+
+          {/* <Button onClick={() => filterFood("breakfast")}>Breakfast</Button>
+          <Button onClick={() => filterFood("lunch")}>Lunch</Button>
+          <Button onClick={() => filterFood("dinner")}>Dinner</Button> */}
         </FilterContainer>
       </Container>
       <SearchResult data={filterData} />
@@ -118,4 +158,8 @@ export const Button = styled.button`
   padding: 6px 12px;
   border: none;
   color: white;
+  cursor: pointer;
+  &:hover {
+    background-color: #f22f2f;
+  }
 `;

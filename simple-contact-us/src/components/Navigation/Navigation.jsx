@@ -7,7 +7,7 @@ const Navigation = () => {
       <div className={styles.logo}>
         <img src="images/logo.png" alt="Logo" />
       </div>
-      <ul >
+      <ul>
         <li>HOME</li>
         <li>ABOUT</li>
         <li>CONTACT</li>

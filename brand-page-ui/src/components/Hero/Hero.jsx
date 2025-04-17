@@ -16,7 +16,7 @@ const Hero = () => {
         </div>
         <div className={css.available}>
           <p>Also Available On</p>
-          <div className={css.brands}s>
+          <div className={css.brands} s>
             <img src="images/flipkart.png" alt="Flipcart" />
 
             <img src="images/amazon.png" alt="Amazon" />

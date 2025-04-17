@@ -12,9 +12,7 @@
   justify-content: center;
   border: none;
   cursor: pointer;
-
 }
-
 
 .outline_btn {
   border: 1px solid black;
@@ -31,5 +29,4 @@
   justify-content: center;
   margin-top: 10px;
   cursor: pointer;
-
 }

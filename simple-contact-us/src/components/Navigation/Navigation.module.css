@@ -4,8 +4,6 @@
   justify-content: space-between;
   align-items: center;
   height: 72px;
-
-
 }
 
 .navigation ul {
@@ -14,10 +12,7 @@
   list-style: none;
   font-weight: 500;
   cursor: pointer;
-
 }
-
-
 
 .navigation ul li {
   color: black;

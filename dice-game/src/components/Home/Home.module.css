@@ -6,8 +6,6 @@
   height: 100vh;
   width: 100vw;
   gap: 10px;
-
-
 }
 
 .image {
@@ -18,15 +16,12 @@
   display: flex;
   flex-direction: column;
   align-items: end;
-
 }
 
 .content h1 {
   font-size: 96px;
   font-weight: 800;
-
 }
-
 
 .container {
   display: flex;

@@ -5,7 +5,6 @@
   align-items: center;
   justify-content: space-between;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-
 }
 
 .logo {
@@ -23,13 +22,11 @@
   list-style: none;
   display: flex;
   gap: 20px;
-
 }
 
 .nav ul li {
   display: inline;
   /* gap: 20px; */
-
 }
 
 .nav ul li a {
@@ -37,19 +34,17 @@
   color: black;
   font-weight: 600;
   transition: all 0.3s ease;
-
 }
 
 .nav ul li a:hover {
-  color: #D01C28
+  color: #d01c28;
 }
-
 
 .loginBtn {
   width: 75px;
   height: 31px;
   padding: 6px 16px;
-  background-color: #D01C28;
+  background-color: #d01c28;
   color: #ffffff;
   border: none;
   cursor: pointer;
@@ -60,7 +55,6 @@
 .loginBtn:hover {
   background-color: #7f0810e7;
 }
-
 
 @media (max-width: 600px) {
   .header {

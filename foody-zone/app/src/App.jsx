@@ -35,7 +35,7 @@ const App = () => {
     }
 
     const filter = data?.filter((food) =>
-      food.name.toLowerCase().includes(searchValue.toLowerCase())
+      food.name.toLowerCase().includes(searchValue.toLowerCase()),
     );
     setFilterData(filter);
   };
@@ -48,7 +48,7 @@ const App = () => {
     }
 
     const filter = data?.filter((food) =>
-      food.type.toLowerCase().includes(type.toLowerCase())
+      food.type.toLowerCase().includes(type.toLowerCase()),
     );
 
     setFilterData(filter);

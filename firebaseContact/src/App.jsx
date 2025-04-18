@@ -48,7 +48,7 @@ const App = () => {
       </div>
       <div>
         <div>
-          {contacts.length === 1 ? (
+          {contacts.length === 0 ? (
             <EmptyCard />
           ) : (
             contacts.map((contact) => (
@@ -64,15 +64,21 @@ const App = () => {
 export default App;
 
 const ContactCard = ({ contact }) => (
-  <div className="bg-yellow mt-4 flex h-[64px] items-center rounded-xl">
-    <HiOutlineUserCircle className="ml-2 text-6xl text-red-500" />
-    <div className="ml-3 text-black">
-      <h2 className="text-xl font-medium">{contact.name}</h2>
-      <p>{contact.email}</p>
+  <div className="mt-4 flex h-[64px] items-center rounded-xl bg-yellow px-2">
+    <div className="flex-shrink-0">
+      <HiOutlineUserCircle className="text-5xl text-orange" />
     </div>
-    <div className="ml-auto mr-4 flex gap-2">
-      <RiEditCircleLine className="cursor-pointer text-3xl" />
-      <IoMdTrash className="cursor-pointer text-3xl text-purple-700" />
+
+    <div className="ml-3 flex-grow overflow-hidden text-black">
+      <h2 className="text-md truncate font-semibold">{contact.name}</h2>
+      <p className="truncate">{contact.email}</p>
+    </div>
+
+    <div className="ml-2 flex-shrink-0 text-3xl">
+      <div className="flex cursor-pointer gap-2">
+        <RiEditCircleLine />
+        <IoMdTrash className="text-purple-600" />
+      </div>
     </div>
   </div>
 );

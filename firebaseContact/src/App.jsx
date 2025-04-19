@@ -28,7 +28,7 @@ const App = () => {
             };
           });
           setContacts(contactList);
-          return contactLists;
+          return contactList;
         });
       } catch (error) {
         console.log(error);
@@ -37,6 +37,27 @@ const App = () => {
 
     getContacts();
   }, []);
+
+  const filterContacts = (e) => {
+    const value = e.target.value;
+
+    const contactsRef = collection(db, "contact");
+
+    onSnapshot(contactsRef, (snapshot) => {
+      const contactList = snapshot.docs.map((doc) => {
+        return {
+          id: doc.id,
+          ...doc.data(),
+        };
+      });
+      const filteredContacts = contactList
+        .filter((contact) => contact.name.toLowerCase()
+        .includes(value.toLowerCase()));
+
+      setContacts(filteredContacts);
+      return filteredContacts;
+    });
+  };
 
   return (
     <>
@@ -47,6 +68,7 @@ const App = () => {
             <FiSearch className="absolute ml-2 text-2xl text-white" />
 
             <input
+              onChange={filterContacts}
               type="text"
               className="h-10 flex-grow rounded-md border bg-transparent pl-10 text-white"
             />

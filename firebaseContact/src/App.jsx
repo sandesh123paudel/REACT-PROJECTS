@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import { FiSearch } from "react-icons/fi";
 import { AiFillPlusCircle } from "react-icons/ai";
-import { HiOutlineUserCircle } from "react-icons/hi";
-import { IoMdTrash } from "react-icons/io";
-import { RiEditCircleLine } from "react-icons/ri";
+import ContactCard from "./components/ContactCard.jsx";
+import EmptyCard from "./components/EmptyCard.jsx";
+
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./config/firebase";
 import AddAndUpdateContact from "./components/AddAndUpdateContact";
@@ -73,39 +73,9 @@ const App = () => {
           </div>
         </div>
       </div>
-
       <AddAndUpdateContact isOpen={isOpen} onClose={onClose} />
     </>
   );
 };
 
 export default App;
-
-const ContactCard = ({ contact }) => (
-  <div className="mt-4 flex h-[64px] items-center rounded-xl bg-yellow px-2">
-    <div className="flex-shrink-0">
-      <HiOutlineUserCircle className="text-5xl text-orange" />
-    </div>
-
-    <div className="ml-3 flex-grow overflow-hidden text-black">
-      <h2 className="text-md truncate font-semibold">{contact.name}</h2>
-      <p className="truncate">{contact.email}</p>
-    </div>
-
-    <div className="ml-2 flex-shrink-0 text-3xl">
-      <div className="flex cursor-pointer gap-2">
-        <RiEditCircleLine />
-        <IoMdTrash className="text-purple-600" />
-      </div>
-    </div>
-  </div>
-);
-
-const EmptyCard = () => (
-  <div className="flex h-[60vh] items-center justify-center">
-    <div className="flex items-center gap-5">
-      <img src="/images/handcontact.png" alt="" />
-      <div className="text-xl text-white">No Contact Found</div>
-    </div>
-  </div>
-);

@@ -5,35 +5,31 @@ import { AiFillPlusCircle } from "react-icons/ai";
 import ContactCard from "./components/ContactCard.jsx";
 import EmptyCard from "./components/EmptyCard.jsx";
 
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, onSnapshot } from "firebase/firestore";
 import { db } from "./config/firebase";
 import AddAndUpdateContact from "./components/AddAndUpdateContact";
+import useDisclose from "./hooks/useDisclose.js";
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
-
-  const [isOpen, setOpen] = useState(false);
-
-  const onOpen = () => {
-    setOpen(true);
-  };
-
-  const onClose = () => {
-    setOpen(false);
-  };
+  const { isOpen, onClose, onOpen } = useDisclose();
 
   useEffect(() => {
     const getContacts = async () => {
       try {
         const contactsRef = collection(db, "contact");
-        const contactSnapshot = await getDocs(contactsRef);
-        const contactList = contactSnapshot.docs.map((doc) => {
-          return {
-            id: doc.id,
-            ...doc.data(),
-          };
+        // const contactSnapshot = await getDocs(contactsRef);
+
+        onSnapshot(contactsRef, (snapshot) => {
+          const contactList = snapshot.docs.map((doc) => {
+            return {
+              id: doc.id,
+              ...doc.data(),
+            };
+          });
+          setContacts(contactList);
+          return contactLists;
         });
-        setContacts(contactList);
       } catch (error) {
         console.log(error);
       }

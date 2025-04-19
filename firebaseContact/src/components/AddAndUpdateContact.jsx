@@ -1,32 +1,49 @@
 import React from "react";
 import Modal from "../components/Modal";
 import { Form, Formik, Field } from "formik";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, updateDoc, doc } from "firebase/firestore";
 import { db } from "../config/firebase";
 
-const AddAndUpdateContact = ({ isOpen, onClose }) => {
+const AddAndUpdateContact = ({ isOpen, onClose, isUpdate, contact }) => {
   const addContact = async (contact) => {
     try {
       const contactRef = collection(db, "contact");
       await addDoc(contactRef, contact);
+      onClose();
     } catch (error) {
       console.log(error);
     }
   };
 
-  const deleteContact=()=>{
-    
-  }
+  const updateContact = async (contact, id) => {
+    try {
+      const contactRef = doc(db, "contact", id);
+      await updateDoc(contactRef, contact);
+      onClose();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <Modal isOpen={isOpen} onClose={onClose}>
         <Formik
-          initialValues={{
-            name: "",
-            email: "",
-          }}
+          initialValues={
+            isUpdate
+              ? {
+                  name: contact.name,
+                  email: contact.email,
+                }
+              : {
+                  name: "",
+                  email: "",
+                }
+          }
           onSubmit={(values) => {
-            addContact({ name: values.name, email: values.email });
+            isUpdate
+              ? updateContact(values, contact.id)
+              : addContact({ name: values.name, email: values.email });
           }}
         >
           <Form className="flex flex-col gap-4">
@@ -48,7 +65,7 @@ const AddAndUpdateContact = ({ isOpen, onClose }) => {
               type="submit"
               className="mt-6 self-end rounded-lg bg-yellow px-3 py-1"
             >
-              Add Contact
+              {isUpdate ? "Update" : "Add"} Contact
             </button>
           </Form>
         </Formik>

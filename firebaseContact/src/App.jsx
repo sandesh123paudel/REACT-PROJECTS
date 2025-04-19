@@ -7,7 +7,7 @@ import { IoMdTrash } from "react-icons/io";
 import { RiEditCircleLine } from "react-icons/ri";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./config/firebase";
-import Modal from "./components/Modal";
+import AddAndUpdateContact from "./components/AddAndUpdateContact";
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
@@ -74,9 +74,7 @@ const App = () => {
         </div>
       </div>
 
-      <Modal isOpen={isOpen} onClose={onClose}>
-        Hi
-      </Modal>
+      <AddAndUpdateContact isOpen={isOpen} onClose={onClose} />
     </>
   );
 };

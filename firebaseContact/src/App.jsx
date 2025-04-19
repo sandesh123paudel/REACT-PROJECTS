@@ -50,9 +50,9 @@ const App = () => {
           ...doc.data(),
         };
       });
-      const filteredContacts = contactList
-        .filter((contact) => contact.name.toLowerCase()
-        .includes(value.toLowerCase()));
+      const filteredContacts = contactList.filter((contact) =>
+        contact.name.toLowerCase().includes(value.toLowerCase()),
+      );
 
       setContacts(filteredContacts);
       return filteredContacts;

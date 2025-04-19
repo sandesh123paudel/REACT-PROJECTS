@@ -9,6 +9,7 @@ import { collection, getDocs, onSnapshot } from "firebase/firestore";
 import { db } from "./config/firebase";
 import AddAndUpdateContact from "./components/AddAndUpdateContact";
 import useDisclose from "./hooks/useDisclose.js";
+import { ToastContainer, toast } from "react-toastify";
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
@@ -18,7 +19,6 @@ const App = () => {
     const getContacts = async () => {
       try {
         const contactsRef = collection(db, "contact");
-        // const contactSnapshot = await getDocs(contactsRef);
 
         onSnapshot(contactsRef, (snapshot) => {
           const contactList = snapshot.docs.map((doc) => {
@@ -70,6 +70,8 @@ const App = () => {
         </div>
       </div>
       <AddAndUpdateContact isOpen={isOpen} onClose={onClose} />
+
+      <ToastContainer position="bottom-center" />
     </>
   );
 };

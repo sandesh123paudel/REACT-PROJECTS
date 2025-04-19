@@ -1,11 +1,40 @@
 import React from "react";
 import Modal from "../components/Modal";
+import { Form, Formik, Field } from "formik";
 
 const AddAndUpdateContact = ({ isOpen, onClose }) => {
   return (
     <div>
       <Modal isOpen={isOpen} onClose={onClose}>
-        Hi Hello
+        <Formik
+          initialValues={{
+            name: "",
+            email: "",
+          }}
+          onSubmit={(values) => {
+            console.log(values);
+          }}
+        >
+          <Form className="flex flex-col gap-4">
+            <div className="flex flex-col gap-1">
+              <label htmlFor="name">Name</label>
+              <Field name="name" className="h-10 rounded-md border p-2" />
+            </div>
+
+            <div className="flex flex-col gap-1">
+              <label htmlFor="email">Email</label>
+              <Field
+                type="email"
+                name="email"
+                className="h-10 rounded-md border p-2"
+              />
+            </div>
+
+            <button className="mt-6 self-end rounded-lg bg-yellow px-3 py-1">
+              Add Contact
+            </button>
+          </Form>
+        </Formik>
       </Modal>
     </div>
   );

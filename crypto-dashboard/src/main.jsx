@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import { ChakraProvider } from "@chakra-ui/react";
 import "@fontsource/ubuntu";
 import { theme } from "./theme/index.js";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ChakraProvider theme={theme}>

@@ -1,4 +1,4 @@
-import { Container, Flex, Heading } from "@chakra-ui/react";
+import { Container, Flex, Heading, Menu } from "@chakra-ui/react";
 import React from "react";
 
 const TopNav = () => {
@@ -6,6 +6,7 @@ const TopNav = () => {
     <Flex boxShadow="xl">
       <Container>
         <Heading>Dashboard</Heading>
+        <Menu></Menu>
       </Container>
     </Flex>
   );

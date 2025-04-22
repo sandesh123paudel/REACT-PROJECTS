@@ -1,10 +1,10 @@
 import React from "react";
-import Dashboard from "./pages/Dashboard/Dashboard";
+import DashboardLayout from "./components/DashboardLayout";
 
 const App = () => {
   return (
     <div>
-      <Dashboard />
+      <DashboardLayout />
     </div>
   );
 };

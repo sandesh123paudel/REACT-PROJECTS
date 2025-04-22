@@ -23,7 +23,7 @@ const SideBar = () => {
     <Stack
       justifyContent="space-between"
       boxShadow="lg"
-      maxWidth="256px"
+      w="16rem"
       height="100vh"
     >
       <Box>
@@ -33,7 +33,6 @@ const SideBar = () => {
           pt="56px"
           textAlign="center"
           color="#5F00D9"
-          px="28px"
         >
           @CRYPTO-DASH
         </Heading>

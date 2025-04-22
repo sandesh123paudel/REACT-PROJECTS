@@ -14,32 +14,30 @@ import React from "react";
 
 import { FaUserCircle } from "react-icons/fa";
 
-const TopNav = () => {
+const TopNav = ({ title }) => {
   return (
-    <Box boxShadow="xl">
+    <Box>
       <HStack
-        maxWidth="60rem"
-        // height="16"
+        maxWidth="1280px"
+        height="16"
         justify="space-between"
-        px="16px"
-        py="16px"
+        px="32"
+        // py="16px"
         mx="auto"
       >
         <Heading fontSize="24px" fontWeight="medium">
-          Dashboard
+          {title}
         </Heading>
 
         <Menu>
           <MenuButton>
-            <Icon as={FaUserCircle} />
-            <MenuList>
-              <MenuItem>Download</MenuItem>
-              <MenuItem>Create a Copy</MenuItem>
-              <MenuItem>Mark as Draft</MenuItem>
-              <MenuItem>Delete</MenuItem>
-              <MenuItem>Attend a Workshop</MenuItem>
-            </MenuList>
+            <Icon as={FaUserCircle} fontSize="32px" color="#5F00D9" />
           </MenuButton>
+
+          <MenuList>
+            <MenuItem>Logout</MenuItem>
+            <MenuItem>Support</MenuItem>
+          </MenuList>
         </Menu>
       </HStack>
     </Box>

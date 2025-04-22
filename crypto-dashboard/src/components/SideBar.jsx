@@ -33,6 +33,7 @@ const SideBar = () => {
           pt="56px"
           textAlign="center"
           color="#5F00D9"
+          px="28px"
         >
           @CRYPTO-DASH
         </Heading>

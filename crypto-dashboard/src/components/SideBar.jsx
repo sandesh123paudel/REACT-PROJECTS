@@ -22,8 +22,14 @@ const SideBar = () => {
   return (
     <Stack
       justifyContent="space-between"
-      boxShadow="lg"
-      w="16rem"
+      boxShadow={{
+        base: "none",
+        lg: "lg",
+      }}
+      w={{
+        base: "full",
+        lg: "16rem",
+      }}
       height="100vh"
     >
       <Box>

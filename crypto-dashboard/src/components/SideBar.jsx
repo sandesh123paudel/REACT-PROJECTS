@@ -30,6 +30,7 @@ const SideBar = () => {
         base: "full",
         lg: "16rem",
       }}
+      bg="white"
       height="100vh"
     >
       <Box>

@@ -1,6 +1,14 @@
 import React from "react";
 import { CustomCard } from "../../../chakra/CustomCard";
-import { Button, Flex, HStack, Icon, Stack, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  HStack,
+  Icon,
+  Image,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import { GoArrowUpRight } from "react-icons/go";
 import {
   BiDownArrow,
@@ -48,6 +56,7 @@ const PriceSection = () => {
           <Button leftIcon={<Icon as={BiSolidMinusCircle} />}>Sell</Button>
         </HStack>
       </Flex>
+      <Image w={"100%"} src="/Graph.png"></Image>
     </CustomCard>
   );
 };

@@ -63,7 +63,7 @@ const TransactionTable = () => {
       time: "02:20 PM",
       type: { name: "CAD Withdrawal", transferBy: "Wire Transfer" },
       amount: "250000",
-      status: "Pending",
+      status: "Processing",
     },
     {
       id: "POIUYTRE",
@@ -108,9 +108,9 @@ const TransactionTable = () => {
   ];
 
   const statusColor = {
-    Pending: "yellow",
+    Pending: "gray",
     Completed: "green",
-    Processing: "gray",
+    Processing: "orange",
     Failed: "red",
   };
 

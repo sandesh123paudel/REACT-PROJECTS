@@ -5,6 +5,7 @@ import DashboardLayout from "../../components/DashboardLayout";
 import PortfolioSection from "./components/PortfolioSection";
 import PriceSection from "./components/PriceSection";
 import Transactions from "./components/Transactions";
+import InfoCard from "./components/InfoCard";
 
 const Dashboard = () => {
   return (
@@ -24,6 +25,26 @@ const Dashboard = () => {
         </GridItem>
         <GridItem colSpan={1}>
           <Transactions />
+        </GridItem>
+        <GridItem colSpan={1}>
+          <InfoCard
+            imgUrl={"/dot.svg"}
+            tagText={"Loans"}
+            text={
+              "Learn more about Loans – Keep your Bitcoin, access it’s value without selling it"
+            }
+            inverted={false}
+          />
+        </GridItem>
+        <GridItem colSpan={1}>
+          <InfoCard
+            imgUrl={"/grid_bg.svg"}
+            tagText={"Contact"}
+            text={
+              "Learn more about our real estate, mortgage, and  corporate account services"
+            }
+            inverted={true}
+          />
         </GridItem>
       </Grid>
     </DashboardLayout>

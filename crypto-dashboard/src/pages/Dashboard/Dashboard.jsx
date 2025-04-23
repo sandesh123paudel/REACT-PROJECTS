@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Grid, GridItem } from "@chakra-ui/react";
 import DashboardLayout from "../../components/DashboardLayout";
 import PortfolioSection from "./components/PortfolioSection";
@@ -11,22 +10,29 @@ const Dashboard = () => {
   return (
     <DashboardLayout title="Dashboard">
       <Grid
-        gridTemplateColumns={{
-          base: "repeat(1,1fr)",
-          md: "repeat(2,1fr)",
+        templateColumns={{
+          base: "1fr",
+          md: "repeat(2, 1fr)",
+          xl: "repeat(4, 1fr)",
         }}
-        gap={"6"}
+        gap={6}
       >
-        <GridItem colSpan={2}>
+        {/* Full-width on all screen sizes */}
+        <GridItem colSpan={{ base: 1, md: 2, xl: 4 }}>
           <PortfolioSection />
         </GridItem>
-        <GridItem colSpan={1}>
+
+        {/* Split evenly on md+, stack on base */}
+        <GridItem colSpan={{ base: 1, md: 1, xl: 2 }}>
           <PriceSection />
         </GridItem>
-        <GridItem colSpan={1}>
+
+        <GridItem colSpan={{ base: 1, md: 1, xl: 2 }}>
           <Transactions />
         </GridItem>
-        <GridItem colSpan={1}>
+
+        {/* InfoCards - 1 column on mobile, 2 on md+, 1 on xl */}
+        <GridItem colSpan={{ base: 1, md: 1, xl: 2 }}>
           <InfoCard
             imgUrl={"/dot.svg"}
             tagText={"Loans"}
@@ -36,12 +42,13 @@ const Dashboard = () => {
             inverted={false}
           />
         </GridItem>
-        <GridItem colSpan={1}>
+
+        <GridItem colSpan={{ base: 1, md: 1, xl: 2 }}>
           <InfoCard
             imgUrl={"/grid_bg.svg"}
             tagText={"Contact"}
             text={
-              "Learn more about our real estate, mortgage, and  corporate account services"
+              "Learn more about our real estate, mortgage, and corporate account services"
             }
             inverted={true}
           />

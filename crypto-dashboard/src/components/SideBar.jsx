@@ -3,9 +3,14 @@ import React from "react";
 import { MdDashboard } from "react-icons/md";
 import { FaMoneyCheckAlt } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const SideBar = () => {
+  const location = useLocation();
+
+  const isActiveLink = (link) => {
+    return location.pathname === link;
+  };
   const navLinks = [
     {
       icon: MdDashboard,
@@ -51,11 +56,12 @@ const SideBar = () => {
                 key={nav.name}
                 py="3"
                 px="4"
+                bg={isActiveLink(nav.url) ? "#f3f3f7" : "transparent"}
+                color={isActiveLink(nav.url) ? "black" : "#797E82"}
                 _hover={{
                   backgroundColor: "#f3f3f7",
                   color: "black",
                 }}
-                color="#797E82"
               >
                 <Icon as={nav.icon}></Icon>
                 <Text fontSize="14px" fontWeight="medium">
@@ -72,11 +78,12 @@ const SideBar = () => {
             borderRadius="10px"
             py="3"
             px="4"
+            bg={isActiveLink("/support") ? "#f3f3f7" : "transparent"}
+            color={isActiveLink("/support") ? "black" : "#797E82"}
             _hover={{
               backgroundColor: "#f3f3f7",
               color: "black",
             }}
-            color="#797E82"
           >
             <Icon as={BiSupport}></Icon>
             <Text fontSize="14px" fontWeight="medium">

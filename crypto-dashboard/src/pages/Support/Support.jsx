@@ -1,6 +1,6 @@
 import React from "react";
 import DashboardLayout from "../../components/DashboardLayout";
-import { Stack } from "@chakra-ui/react";
+import { Flex, Stack } from "@chakra-ui/react";
 import SupportCard from "./components/SupportCard";
 import ContactCard from "./components/ContactCard";
 import { IoMdMail } from "react-icons/io";
@@ -18,7 +18,7 @@ const Support = () => {
           us."
           icon={IoMdMail}
         />
-        <SupportCard 
+        <SupportCard
           leftComponent={
             <InfoCard
               imgUrl={"/grid_bg.svg"}

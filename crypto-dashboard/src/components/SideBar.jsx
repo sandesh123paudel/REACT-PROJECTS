@@ -39,15 +39,17 @@ const SideBar = () => {
       height="100vh"
     >
       <Box>
-        <Heading
-          as="h1"
-          fontSize="20px"
-          pt="56px"
-          textAlign="center"
-          color="#5F00D9"
-        >
-          @CRYPTO-DASH
-        </Heading>
+        <Link to={"/"}>
+          <Heading
+            as="h1"
+            fontSize="20px"
+            pt="56px"
+            textAlign="center"
+            color="#5F00D9"
+          >
+            @CRYPTO-DASH
+          </Heading>
+        </Link>
         <Box mt="6" mx="3">
           {navLinks.map((nav) => (
             <Link to={nav.url}>

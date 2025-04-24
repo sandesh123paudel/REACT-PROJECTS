@@ -18,8 +18,14 @@ import { IoMdMail } from "react-icons/io";
 
 const SupportCard = () => {
   return (
-    <Flex>
-      <Stack>
+    <Flex
+      gap={"6"}
+      flexDir={{
+        base: "column",
+        xl: "row",
+      }}
+    >
+      <Stack maxW={"380px"}>
         <Icon boxSize={"6"} color={"p.purple"} as={IoMdMail} />
         <Text fontWeight={"medium"} as={"h1"} textStyle={"h1"}>
           Contact Us
@@ -29,44 +35,57 @@ const SupportCard = () => {
           us.
         </Text>
       </Stack>
-      <Card p={"6"} borderRadius={"16px"} mx={"auto"}>
+      <Card p={"6"} borderRadius={"16px"} flexGrow={1}>
         <Text fontWeight={"medium"} fontSize={"md"}>
           You will receive response within 24 hours of time of submit.
         </Text>
 
-        <HStack mt={"8"}>
-          <FormControl>
-            <FormLabel>Name</FormLabel>
-            <Input type="text" placeholder="James" />
-          </FormControl>
-          <FormControl>
-            <FormLabel>Surname</FormLabel>
-            <Input type="text" placeholder="Arthur" />
-          </FormControl>
-        </HStack>
-        <HStack mt={"6"}>
-          <FormControl>
-            <FormLabel>Email</FormLabel>
-            <Input type="email" placeholder="name@gmail.com" />
-          </FormControl>
-        </HStack>
-        <HStack mt={"6"}>
-          <FormControl>
-            <FormLabel>Message</FormLabel>
-            <Textarea placeholder="Your Message" />
-          </FormControl>
-        </HStack>
+        <Stack spacing={"6"}>
+          <HStack
+            mt={"8"}
+            display={"flex"}
+            flexDir={{
+              base: "column",
+              md: "row",
+            }}
+          >
+            <FormControl colorScheme="gray">
+              <FormLabel>Name</FormLabel>
+              <Input type="text" placeholder="James" />
+            </FormControl>
+            <FormControl>
+              <FormLabel>Surname</FormLabel>
+              <Input type="text" placeholder="Arthur" />
+            </FormControl>
+          </HStack>
+          <HStack>
+            <FormControl>
+              <FormLabel>Email</FormLabel>
+              <Input type="email" placeholder="name@gmail.com" />
+            </FormControl>
+          </HStack>
+          <HStack>
+            <FormControl>
+              <FormLabel>Message</FormLabel>
+              <Textarea placeholder="Your Message" />
+            </FormControl>
+          </HStack>
 
-        <Checkbox defaultChecked mt={"8"}>
-          I agree with
-          <Box as="span" color="p.purple" ml={1}>
-            Terms & Conditions.
-          </Box>
-        </Checkbox>
+          <Checkbox defaultChecked>
+            <Text fontSize={"xs"} fontWeight={"medium"}>
+              I agree with
+              <Box as="span" color="p.purple" ml={1}>
+                Terms & Conditions.
+              </Box>
+            </Text>
+          </Checkbox>
 
-        <Stack mt={8}>
-          <Button>Send a Message</Button>
-          <Button colorScheme="gray">Book a Meeting</Button>
+          <Stack>
+            <Button fontSize={"sm"}>Send a Message</Button>
+            <Button fontSize={"sm"} colorScheme="gray">
+              Book a Meeting
+            </Button>
+          </Stack>
         </Stack>
       </Card>
     </Flex>

@@ -1,4 +1,11 @@
-import { extendTheme, withDefaultColorScheme } from "@chakra-ui/react";
+import {
+  color,
+  extendTheme,
+  FormControl,
+  FormLabel,
+  Input,
+  withDefaultColorScheme,
+} from "@chakra-ui/react";
 
 export const theme = extendTheme(
   {
@@ -102,6 +109,40 @@ export const theme = extendTheme(
         baseStyle: {
           fontWeight: "bold",
           borderRadius: "10px",
+        },
+      },
+
+      FormLabel: {
+        baseStyle: {
+          fontSize: "sm",
+        },
+      },
+      Input: {
+        variants: {
+          outline: {
+            field: {
+              fontSize: "sm",
+              h: "38px",
+              borderRadius: "8px",
+              _focus: {
+                borderColor: "p.purple", // Chakra handles focus border color like this
+                boxShadow: "0 0 0 1px #5F00D9", // Or use a theme token if defined
+              },
+            },
+          },
+        },
+      },
+      Textarea: {
+        variants: {
+          outline: {
+            fontSize: "sm",
+            h: "38px",
+            borderRadius: "8px",
+            _focus: {
+              borderColor: "p.purple", // Chakra handles focus border color like this
+              boxShadow: "0 0 0 1px #5F00D9", // Or use a theme token if defined
+            },
+          },
         },
       },
     },

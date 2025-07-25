@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { assets } from "../assets/assets";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +25,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 z-50 w-full px-6 md:px-16 lg:px-36 py-4 flex justify-between items-center bg-transparent shadow-md">
       {/* Logo */}
       <NavLink to="/" onClick={handleLinkClick} className="max-md:flex-1">
-        <img src="/logo.png" alt="Moovie Booking- Logo" className="w-40" />
+        <img src={assets.logo} alt="Moovie Booking- Logo" className="w-40" />
       </NavLink>
 
       {/* Desktop Navigation */}
@@ -35,9 +36,9 @@ const Header = () => {
             to={item.to}
             onClick={handleLinkClick}
             className={({ isActive }) =>
-              `text-white text-lg transition duration-300 hover:text-[rgb(245,158,11)] relative after:content-[''] after:block after:h-[2px] after:bg-[rgb(245,158,11)] after:transition-all after:duration-300 ${
+              ` text-lg transition duration-300 hover:text-[rgb(245,158,11)] relative after:content-[''] after:block after:h-[2px] after:bg-[rgb(245,158,11)] after:transition-all after:duration-300 ${
                 isActive
-                  ? "after:w-1/2 after:mx-auto text-[rgb(99,102,241)]"
+                  ? "after:w-1/2 after:mx-auto text-[rgb(245,158,11)]"
                   : "after:w-0 after:mx-auto"
               }`
             }
@@ -67,7 +68,7 @@ const Header = () => {
             to={item.to}
             onClick={handleLinkClick}
             className={({ isActive }) =>
-              `text-white transition duration-300 hover:text-[rgb(245,158,11)] relative after:content-[''] after:block after:h-[2px] after:bg-[rgb(245,158,11)] after:transition-all after:duration-300 ${
+              ` transition duration-300 hover:text-[rgb(245,158,11)] relative after:content-[''] after:block after:h-[2px] after:bg-[rgb(245,158,11)] after:transition-all after:duration-300 ${
                 isActive
                   ? "after:w-1/2 after:mx-auto text-[rgb(245,158,11)]"
                   : "after:w-0 after:mx-auto"

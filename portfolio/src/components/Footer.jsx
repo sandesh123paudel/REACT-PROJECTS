@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="absolute bottom-0 w-full text-center mb-2 text-sm md:text-base  pt-6 pb-4 px-4 bg-transparent">
+    <footer className="bottom-0 w-full text-center mb-2 text-sm md:text-base  pt-6 pb-4 px-4 bg-transparent border-t">
       <div className="flex justify-center gap-4 mb-2 text-xl">
         <a
           href="https://www.linkedin.com/in/sundeep-acharya-aa213123b/"
@@ -29,7 +29,7 @@ const Footer = () => {
         <span className="font-semibold">Sundeep Acharya</span>. All rights
         reserved.
       </div>
-      <div className="flex justify-center text-xs mt-1 opacity-70">
+      <div className="flex justify-center text-xs font-semibold mt-1 opacity-70">
         <div>Created with ❤️ by &nbsp; </div>
         <a href="https://www.linkedin.com/in/sandeshpaudel" target="_blank">
           Sandesh Paudel

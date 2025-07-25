@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
-import { assets } from "../assets/assets";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,14 +21,14 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full px-6 md:px-16 lg:px-36 py-4 flex justify-between items-center bg-transparent shadow-md">
+    <header className="fixed md:static top-0 left-0 z-50 w-full px-6 md:px-16 lg:px-36 py-4 flex justify-between items-center bg-gradient-to-r from-[#233427] via-[#1E1A2A] to-[#233427] border-b border-gray-700">
       {/* Logo */}
-      <NavLink to="/" onClick={handleLinkClick} className="max-md:flex-1">
-        <img src={assets.logo} alt="Moovie Booking- Logo" className="w-40" />
+      <NavLink to="/" onClick={handleLinkClick} className="max-lg:flex-1">
+        <img src="/logo.png" alt="Sundeep Logo" className="w-40" />
       </NavLink>
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex gap-8 items-center">
+      <nav className="hidden lg:flex gap-8 items-center">
         {navItems.map((item) => (
           <NavLink
             key={item.to}
@@ -50,7 +49,7 @@ const Header = () => {
 
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden z-50 text-[rgb(245,158,11)]"
+        className="lg:hidden z-50 text-[rgb(245,158,11)]"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -58,7 +57,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed inset-0 z-40 backdrop-blur-md bg-[rgb(33, 72, 55)]/90 flex flex-col items-center justify-center gap-6 text-xl transition-transform duration-300 ${
+        className={`lg:hidden fixed inset-0 z-40 backdrop-blur-md bg-[rgb(33, 72, 55)]/90 flex flex-col items-center justify-center gap-6 text-xl transition-transform duration-300 ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

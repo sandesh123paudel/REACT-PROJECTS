@@ -28,7 +28,7 @@ const HeroSection = () => {
 
         <button
           className="flex items-center gap-1 text-sm font-medium px-6 py-3 border  rounded-full mt-4  cursor-pointer"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/category/literatures")}
         >
           Explore Blogs
           <ArrowRight className="h-5 w-5" />
